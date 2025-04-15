@@ -82,6 +82,32 @@ const connectDB = async () => {
 };
 connectDB();
 
+// WebSocket Setup (optional, if you're using it)
+const wss = new WebSocket.Server({ server });
+
+wss.on("connection", (ws) => {
+  console.log("🔗 New WebSocket connection");
+
+  ws.on("message", (message) => {
+    console.log("📩 Received:", message);
+    // Echo the message back for now
+    ws.send(`Server received: ${message}`);
+  });
+
+  ws.on("close", () => {
+    console.log("❌ WebSocket connection closed");
+  });
+});
+
+// Port
+const PORT = process.env.PORT || 5000;
+
+// Start server
+server.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
+});
+
+
 // Start server with both HTTP and WebSocket
 const PORT = process.env.PORT || 5000 ;
 server.listen(PORT, () => {
