@@ -249,14 +249,14 @@ function TurfDetails() {
     const fetchTurfDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/turfs/${id}`);
+        const response = await fetch(`https://turfit-app.onrender.com/api/turfs/${id}`);
         if (!response.ok) throw new Error("Failed to fetch turf data");
         const data = await response.json();
         setTurf(data);
         
         // Fetch initial available slots
         const slotsResponse = await fetch(
-          `http://localhost:5000/api/bookings/available-slots?turfId=${id}&date=${selectedDate}&hours=1`
+          `https://turfit-app.onrender.com/api/bookings/available-slots?turfId=${id}&date=${selectedDate}&hours=1`
         );
         const slotsData = await slotsResponse.json();
         setAvailableSlots(slotsData);
