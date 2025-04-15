@@ -8,7 +8,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../styles/TurfBooking.css";
 
-const API_BASE_URL = "http://localhost:5000"; // Replace with your backend URL
+const API_BASE_URL = "https://turfit-app.onrender.com"; // Replace with your backend URL
 
 // Helper function to check if a slot is in the future
 const isSlotInFuture = (slot, selectedDate) => {
