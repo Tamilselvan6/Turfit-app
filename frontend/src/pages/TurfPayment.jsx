@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/TurfPayment.css";
 
-const API_BASE_URL = "http://localhost:5000"; // Replace with backend URL
+const API_BASE_URL = "https://turfit-app.onrender.com/api/turfs/"; // Replace with backend URL
 
 const TurfPayment = () => {
   const navigate = useNavigate();
