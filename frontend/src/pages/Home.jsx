@@ -29,7 +29,7 @@ function Home() {
 
   // Fetch turfs from the API
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/turfs`)
+    fetch(`https://turfit-app.onrender.com/api/turfs/`)
       .then((res) => res.json())
       .then((data) => {
         setTurfs(data);
