@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/turfs'; // Replace with your backend URL
+const API_BASE_URL = 'https://turfit-app.onrender.com/api/turfs'; // Replace with your backend URL
 
 // ✅ Fetch all turfs
 export const fetchTurfs = async () => {
