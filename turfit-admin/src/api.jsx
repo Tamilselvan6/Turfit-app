@@ -5,7 +5,7 @@ const API_BASE_URL = 'https://turfit-app.onrender.com/api/turfs'; // Replace wit
 // ✅ Fetch all turfs
 export const fetchTurfs = async () => {
     try {
-        const response = await axios.get(API_BASE_URL);
+        const response = await axios.get("https://turfit-app.onrender.com/api/turfs");
         return response.data;
     } catch (error) {
         console.error('Error fetching turfs:', error);
