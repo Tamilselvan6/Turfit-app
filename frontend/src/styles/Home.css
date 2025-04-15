@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --primary-color: #0e9124 ;
+    --secondary-color: #27AE60 ;
+    --background-light: #f5f5f5;
+    --font-size-lg: 2.5rem;
+    --font-size-md: 1.5rem;
+    --font-size-sm: 0.9rem;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}
+
+body {
+    font-family: var(--font-primary), var(--font-fallback);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-secondary), var(--font-fallback);
+    font-weight: 600;
+}
+
+p {
+    font-family: var(--font-primary), var(--font-fallback);
+    font-size: 16px;
+}
+
+.hero {
+    position: relative;
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
+    z-index: 1;
+}
+
+.swiper-pagination {
+    bottom: 10px !important;
+    --swiper-theme-color: #adadad;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    /* White background */
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Navbar Brand/Logo */
+.navbar .nav-item img {
+    height: 36px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* Search Input */
+.search-input {
+    background: #f5f5f5;
+    /* Light gray background */
+    color: #333333;
+    /* Dark text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 14px;
+    width: 250px;
+    /* Fixed width for desktop */
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.search-input::placeholder {
+    color: #888888;
+    /* Gray placeholder text */
+}
+
+.search-input:focus {
+    outline: none;
+    background: #e0e0e0;
+    /* Slightly darker gray on focus */
+}
+
+/* Search Suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 50px;
+    /* Position below the search bar */
+    left: 0;
+    background: #ffffff;
+    /* White background */
+    border: 1px solid #e0e0e0;
+    /* Light border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    z-index: 1000;
+    width: 100%;
+    /* Full width of the search bar */
+    max-height: 200px;
+    /* Limit height */
+    overflow-y: auto;
+    /* Enable scrolling if needed */
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333333;
+    /* Dark text */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+    /* Light gray on hover */
+    color: #000000;
+    /* Darker text on hover */
+}
+
+.suggestion-item:not(:last-child) {
+    border-bottom: 1px solid #eeeeee;
+    /* Separator between items */
+}
+
+/* Sign-In Button */
+.sign-in-btn {
+    background: #008000;
+    /* Green background */
+    color: #ffffff;
+    /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.sign-in-btn:hover {
+    background: #006400;
+    /* Darker green on hover */
+}
+
+.sign-in-btn:active {
+    transform: translateY(0);
+    /* Reset on click */
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Turf Container */
+.turf-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.turf-card {
+    width: 220px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container {
+    background: #000;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.turf-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.turf-rating {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    color: white;
+    font-size: 14px;
+}
+
+.rating-text {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.votes {
+    margin-left: 5px;
+    color: #ccc;
+}
+
+.turf-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.turf-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.turf-sports {
+    font-size: 14px;
+    color: #666;
+}
+
+.turf-price {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar {
+        gap: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    .search-suggestions {
+        top: 50px;
+        left: 10px;
+        right: 10px;
+        max-height: 150px;
+    }
+
+    .suggestion-item {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .sign-in-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .icon-button {
+        padding: 6px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .filter-sidebar {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+        height: 120px;
+        margin: 10px 20px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+        top: 60%;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    .swiper-pagination {
+        bottom: 8px !important;
+    }
+
+    /* Grid layout for turf cards */
+    .turf-container {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .turf-card {
+        width: 100%;
+        max-width: 180px;
+        margin: auto;
+    }
+
+    .turf-image {
+        height: 250px;
+    }
+
+    .turf-name {
+        font-size: 14px;
+    }
+
+    .turf-sports,
+    .turf-price {
+        font-size: 12px;
+    }
+}
+/* Skeleton Styles */
+.skeleton-container {
+    padding: 20px;
+}
+
+.skeleton-hero {
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.skeleton-filter {
+    width: 250px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.skeleton-turf-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.skeleton-turf-card {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.skeleton-image {
+    height: 150px;
+    background-color: #c0c0c0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.skeleton-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skeleton-text {
+    height: 16px;
+    background-color: #c0c0c0;
+    border-radius: 4px;
+}
+
+.skeleton-text:nth-child(1) {
+    width: 80%;
+}
+
+.skeleton-text:nth-child(2) {
+    width: 60%;
+}
+
+.skeleton-text:nth-child(3) {
+    width: 40%;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .skeleton-filter {
+        display: none; /* Hide filter skeleton on mobile */
+    }
+
+    .skeleton-turf-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per column */
+        gap: 10px; /* Reduce gap for mobile */
+    }
+
+    .skeleton-turf-card {
+        padding: 8px; /* Adjust padding for mobile */
+    }
+
+    .skeleton-image {
+        height: 120px; /* Adjust image height for mobile */
+    }
+
+    .skeleton-text {
+        height: 12px; /* Adjust text height for mobile */
+    }
+}

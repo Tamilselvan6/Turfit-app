@@ -1,0 +1,470 @@
+/* Confirmation Page - Professional Styling */
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.confirmation-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Header Section */
+.confirmation-header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  color: #10b981;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 6px rgba(16, 185, 129, 0.15));
+}
+
+.confirmation-header h1 {
+  color: #1e293b;
+  margin: 0.75rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.confirmation-text {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.reference-number {
+  background: #f1f5f9;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* QR Code Section */
+.qr-code-container {
+  margin: 1.5rem auto;
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  display: inline-block;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.qr-code-label {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Details Sections */
+.user-details-section,
+.booking-details,
+.payment-details {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.user-details-section h2,
+.booking-details h2,
+.payment-details h2 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.booking-details-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item strong {
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Status Badges */
+.status-success {
+  color: #10b981;
+  font-weight: 600;
+  background: #ecfdf5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+/* Next Steps Section */
+.next-steps {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border: 1px solid #e0f2fe;
+}
+
+.next-steps h2 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.next-steps ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.next-steps li {
+  margin-bottom: 0.75rem;
+  color: #475569;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.info-icon {
+  color: #0ea5e9;
+  font-size: 1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Support Section */
+.support-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.support-section h2 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.support-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.support-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.support-link:hover {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.share-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.print-btn {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.home-btn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.download-btn {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.calendar-btn {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+/* Policy Sections */
+.important-notes,
+.cancellation-policy {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.important-notes {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.cancellation-policy {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.important-notes h3,
+.cancellation-policy h3 {
+  color: #1e293b;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.important-notes ul,
+.cancellation-policy ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.important-notes li,
+.cancellation-policy li {
+  margin-bottom: 0.5rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* Utility Classes */
+.truncate-id {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-family: monospace;
+}
+
+/* Responsive Adjustments */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .confirmation-card {
+    padding: 2rem;
+  }
+  
+  .booking-details-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .confirmation-card {
+    padding: 2.5rem;
+  }
+  
+  .booking-details-section {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+  }
+  
+  .action-btn {
+    width: auto;
+  }
+}
+
+
+/* Mobile-specific adjustments */
+@media (max-width: 767.98px) {
+  .confirmation-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .success-icon {
+    font-size: 3.5rem;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
+  }
+  
+  .support-contacts {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-btn {
+    justify-content: center;
+  }
+}
+
+/* Very small mobile devices (below 576px) */
+@media (max-width: 575.98px) {
+  .confirmation-card {
+    padding: 1.5rem;
+  }
+  
+  .confirmation-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .confirmation-text {
+    font-size: 1rem;
+  }
+  
+  .user-details-section,
+  .booking-details,
+  .payment-details,
+  .next-steps {
+    padding: 1.25rem;
+  }
+  
+  .reference-number {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tall mobile devices (height constraints) */
+@media (max-height: 700px) and (orientation: portrait) {
+  .confirmation-container {
+    padding: 1rem;
+  }
+  
+  .confirmation-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    font-size: 12pt;
+  }
+  
+  .confirmation-container {
+    padding: 0 !important;
+    min-height: auto;
+  }
+  
+  .confirmation-card {
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .action-buttons,
+  .support-section {
+    display: none !important;
+  }
+  
+  .qr-code-container {
+    page-break-inside: avoid;
+  }
+  
+  .next-steps, 
+  .important-notes, 
+  .cancellation-policy {
+    page-break-inside: avoid;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #64748b;
+  }
+}

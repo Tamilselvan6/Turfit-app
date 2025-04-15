@@ -1,0 +1,54 @@
+
+.filter-container {
+    width: 100%; 
+    max-width: 320px;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: none;
+}
+
+.filter-title {
+    font-weight: bold;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 600; 
+    color: #333;
+}
+.filter-component{
+    border-radius: 8px;
+    margin: 10px 0; 
+    background: #fff;
+}
+
+.clear-btn {
+    font-size: 14px;
+    color: red;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px 8px; 
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background-color: rgba(255, 77, 79, 0.1); 
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-container {
+        width: 100%; 
+        padding: 16px; 
+    }
+
+    .filter-title {
+        font-size: 16px; 
+    }
+
+    .clear-btn {
+        font-size: 12px; 
+    }
+}

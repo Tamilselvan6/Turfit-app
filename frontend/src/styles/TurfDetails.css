@@ -1,0 +1,654 @@
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
+}
+
+/* General Styles */
+.turf-details-container {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    padding-bottom: 80px;
+    /* For fixed button spacing */
+}
+
+/* Hero Section */
+.turfDetails-bg {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.turfDetails-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+/* Image Swiper */
+.turfDetails-images {
+    flex: 1;
+    max-width: 40%;
+}
+
+.turfDetails-swiper {
+    width: 280px;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.turfDetails-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hero Content */
+.turfDetails-hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 500px;
+}
+
+.turfDetails-name {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Rating Section */
+.turfDetails-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    border-radius: 10px;
+    margin: auto;
+}
+
+.star-icon {
+    color: #ffd700;
+    font-size: 20px;
+}
+
+.turfDetails-rating .rating-text {
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    color: #27AE60;
+}
+
+.votes-text {
+    color: #666;
+    font-size: var(--font-size-sm);
+}
+
+.rate-now {
+    padding: 6px 12px;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: transparent;
+    border-radius: 50px;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rate-now:hover {
+    background: rgba(0, 255, 8, 0.1);
+}
+
+.price-bold {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.price-message {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price-message svg {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Book Now Button */
+.book-now-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Fixed "Book Now" Button */
+.fixed-book-now {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.fixed-book-now.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fixed-turfDetails-name {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+}
+
+/* Additional Details */
+.turf-details {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Section Divider */
+.section-divider {
+    margin: 25px 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #ddd, transparent);
+}
+
+/* Pricing Details */
+.pricing-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-rule {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.day-type {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #222;
+}
+
+.time-slot,
+.price {
+    color: #555;
+}
+
+
+/* Address Section */
+.turf-address {
+    background: #f9f9f9;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.turf-address p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Timing Section */
+.timing-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.timing-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.timing-value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Sports Section */
+.sports-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.sport-item {
+    background: #f4f4f4;
+    color: #555;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.sport-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Amenities Section */
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.amenity-item {
+    background: #f4f4f4;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.amenity-item:hover {
+    background: #333;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* No Data Text */
+.no-data {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Rating Modal */
+.rating-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.rating-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rating-modal h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.star-rating .star {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.star-rating .star.filled {
+    color: gold;
+}
+
+.submit-rating-btn,
+.cancel-rating-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-rating-btn {
+    background-color: #28a745;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.submit-rating-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-rating-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-rating-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .fixed-book-now {
+        transform: translateY(0);
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: var(--spacing-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .fixed-turfDetails-name {
+        font-size: 20px;
+    }
+
+    .book-now-btn {
+        padding: 8px 20px;
+        font-size: var(--font-size-sm);
+    }
+
+    .turfDetails-bg {
+        background-image: none !important;
+        padding: var(--spacing-sm);
+        margin: 0;
+        margin-top: 80px;
+        display: block;
+    }
+
+    .turfDetails-bg::after {
+        background: none;
+    }
+
+    .turfDetails-images {
+        max-width: 100%;
+    }
+
+    .turfDetails-swiper {
+        margin-left: 0;
+        width: 100%;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .turfDetails-name {
+        display: none;
+    }
+
+    .turfDetails-price {
+        color: #222;
+    }
+
+    .turfDetails-hero-content .book-now-btn {
+        display: none;
+    }
+
+    .turfDetails-rating {
+        background: var(--background-light);
+        padding: var(--spacing-sm);
+        border-radius: 10px;
+        max-width: 420px;
+        margin: auto;
+        margin-top: var(--spacing-sm);
+    }
+
+    .turfDetails-rating .rating-text {
+        color: black;
+    }
+
+    .turf-details {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+
+/* Skeleton Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.skeleton-loading .skeleton-text,
+.skeleton-loading .skeleton-bg,
+.skeleton-loading .skeleton-image-slider,
+.skeleton-loading .skeleton-btn,
+.skeleton-loading .skeleton-star,
+.skeleton-loading .skeleton-list-item,
+.skeleton-loading .skeleton-divider,
+.skeleton-loading .skeleton-pricing-rule,
+.skeleton-loading .skeleton-timing-line {
+    position: relative;
+    overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.skeleton-loading .skeleton-text:empty:after,
+.skeleton-loading .skeleton-bg:empty:after,
+.skeleton-loading .skeleton-image-slider:empty:after,
+.skeleton-loading .skeleton-btn:empty:after,
+.skeleton-loading .skeleton-star:empty:after,
+.skeleton-loading .skeleton-list-item:empty:after,
+.skeleton-loading .skeleton-divider:empty:after,
+.skeleton-loading .skeleton-pricing-rule:empty:after,
+.skeleton-loading .skeleton-timing-line:empty:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear;
+}
+
+/* Specific skeleton styles */
+.skeleton-loading .turfDetails-bg {
+    height: 400px;
+    background: #e0e0e0;
+}
+
+.skeleton-loading .skeleton-image-slider {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.skeleton-loading .skeleton-title {
+    height: 32px;
+    margin-bottom: 15px;
+}
+
+.skeleton-loading .skeleton-rating,
+.skeleton-loading .skeleton-votes,
+.skeleton-loading .skeleton-rate-btn {
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.skeleton-loading .skeleton-star {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.skeleton-loading .skeleton-price {
+    height: 28px;
+    margin-bottom: 8px;
+}
+
+.skeleton-loading .skeleton-message {
+    height: 18px;
+}
+
+.skeleton-loading .skeleton-book-btn {
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.skeleton-loading .skeleton-section {
+    margin: 20px 0;
+}
+
+.skeleton-loading .skeleton-section-title {
+    height: 24px;
+    margin-bottom: 15px;
+}
+
+.skeleton-loading .skeleton-address-line {
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.skeleton-loading .skeleton-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 25px 0;
+}
+
+.skeleton-loading .skeleton-pricing-rule {
+    height: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 15px;
+}
+
+.skeleton-loading .skeleton-day-type,
+.skeleton-loading .skeleton-time-slot,
+.skeleton-loading .skeleton-price {
+    height: 100%;
+}
+
+.skeleton-loading .skeleton-timing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton-loading .skeleton-timing-line {
+    height: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.skeleton-loading .skeleton-label,
+.skeleton-loading .skeleton-value {
+    height: 100%;
+}
+
+.skeleton-loading .skeleton-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skeleton-loading .skeleton-list-item {
+    height: 28px;
+    padding: 0 12px;
+    border-radius: 14px;
+}
